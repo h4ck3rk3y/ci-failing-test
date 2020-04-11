@@ -8,5 +8,5 @@ import (
 
 func TestSum(t *testing.T) {
 	total := Sum(5, 3)
-	assert.Equal(t, total, 8)
+	assert.Equal(t, total, 92)
 }
