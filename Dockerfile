@@ -4,6 +4,9 @@ RUN set -ex; \
     apk update; \
     apk add --no-cache git
 
-WORKDIR /go/src/github.com/h4ck3rk3y/ci-test/
+ADD . /test
+WORKDIR /test
 
-CMD CGO_ENABLED=0 go test ./...
+RUN go get github.com/stretchr/testify
+
+RUN CGO_ENABLED=0 go test -v .
